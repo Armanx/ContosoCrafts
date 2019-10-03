@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Contoso Crafts</h1>
+    <p>
+        Learn how to build ASP.NET apps that can run anywhere.
+        <a class="btn btn-primary" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
+            Learn More
+        </a>
+    </p>
+</div>
+
+<div class="container-fluid">
+    <div id="card-columns">
+        @foreach (var product in Model.Products)
+        {
+            <div id="card">
+                <div id="img" style="background-image: url('@product.Image');"></div>
+                <div id="card-body">
+                    <h5 class="card-title">@product.Title</h5>
+                </div>          
+            </div>
+        
+        }
+    </div>
+</div>
+
+
+
